@@ -7,7 +7,12 @@ const { Server } = require("socket.io");
 
 const connectDB = require("./config/db");
 const { errorHandler, notFound } = require("./middleware/errorHandler");
-
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Trove Ecommerce Backend is Running 🚀",
+  });
+});
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
